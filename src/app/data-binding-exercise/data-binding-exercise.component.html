@@ -1,0 +1,15 @@
+<input type="text" [value]="initialValue">
+
+<br>
+
+<button [disabled]="isDisabled">Clique em mim!</button>
+
+<br>
+
+<p [attr.aria-label]="isDisabled ? 'Botão desabilitado' : accesibilityText">
+    Um texto qualquer...
+</p>
+
+<br>
+
+<img [src]="imageURL">

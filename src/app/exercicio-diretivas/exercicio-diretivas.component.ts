@@ -9,6 +9,41 @@ import { Component } from '@angular/core';
 
 export class ExercicioDiretivasComponent {
 
+  listaFrutas = [
+    "Maçã",
+    "Banana",
+    "Laranja",
+    "Morango",
+    "Maracujá",
+    "Uva",
+    "Mamão",
+    "Goiaba",
+    "Melância"
+  ];
+
+  listaCarros = [{
+      placa: "FVB-8808",
+      cor: "Preto",
+      modelo: "Honda Fit",
+    },{
+      placa: "FMM-9703",
+      cor: "Prata",
+      modelo: "Nissan March",
+    },{
+      placa: "FGB-5601",
+      cor: "Branco",
+      modelo: "Chevrolet Onix",
+    },{
+      placa: "JHK-0025",
+      cor: "Vermelho",
+      modelo: "Nissan Versa",
+    },{
+      placa: "GFR-8963",
+      cor: "Preto",
+      modelo: "Fiat Punto",
+    },
+  ];
+
   deveExibir = true;
 
   trocarValor() {

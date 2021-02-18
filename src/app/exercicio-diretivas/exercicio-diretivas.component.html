@@ -27,5 +27,24 @@
     <li *ngFor="let carro of listaCarros,  index as index, let first = first, last as last">
         {{ first }} | {{ last }} | {{ index + 1 }} | Modelo: {{ carro.modelo}} - Placa: {{ carro.placa }} - Cor: {{ carro.cor }}
     </li>
-    
 </ul>
+
+<hr>
+
+<h1>Resolução do Exercício</h1>
+
+<ul>
+    <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA; let par = even">
+        <h2>{{ memesAgrupados.categoria }}</h2>
+        
+        <div *ngFor="let meme of memesAgrupados.memes">
+            <img [src]="PREFIXO_IMAGEM_URL + meme.imagemURL" *ngIf="par; else blocoPar">
+            <ng-template #blocoPar>
+                <h2> PAR </h2>
+            </ng-template>
+        </div>
+    </li>
+</ul>
+
+<br><br><br><br>
+<br><br><br><br>

@@ -21,4 +21,9 @@ export class AppComponent {
       this.titleHeader = "Tchau Tchau! 👀"
     }, 5000);
   };
+
+  onClicked($event) {
+    console.log("AppComponent: evento recebido!", $event)
+  };
+
 }

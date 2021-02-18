@@ -1,10 +1,27 @@
+<app-exercicio-contador
+    [valor]="10"
+    (valorMudou)="onValorAtualizadoNoContador($event)"
+>
+</app-exercicio-contador>
+
 <h1> Event Binding Examples: </h1>
+
+<button (click)="onClickButton($event)">
+    Emitir informação de clique.
+</button>
+
+<br>
 
 <button 
 (click)="onClick($event)"
 (mouseenter)="passouMouse($event)"
 > Clique em mim! </button>
+
+<br>
+
 <input type="text" [value]="valorDoInput" (keyup)="digitouAlgo($event)">
+
+<br>
 
 <p> Valor do Input: {{ valorDoInput }} </p>
 

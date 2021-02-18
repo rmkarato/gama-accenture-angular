@@ -8,17 +8,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ExercicioContadorComponent {
   
   @Input() valor = 0;
-  @Output() valorMudou = new EventEmitter();
+  @Output() valorChange = new EventEmitter();  //two way data binding
 
   constructor() { }
 
   incrementar() {
     this.valor = this.valor + 1;
-    this.valorMudou.emit(this.valor);
+    this.valorChange.emit(this.valor);
   };
 
   decrementar() {
     this.valor = this.valor - 1;
-    this.valorMudou.emit(this.valor);
+    this.valorChange.emit(this.valor);
   };
 }

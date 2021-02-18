@@ -1,6 +1,7 @@
+Valor atual de valorDoContador: {{ valorDoContador }};
+
 <app-exercicio-contador
-    [valor]="10"
-    (valorMudou)="onValorAtualizadoNoContador($event)"
+    [(valor)]="valorDoContador"
 >
 </app-exercicio-contador>
 

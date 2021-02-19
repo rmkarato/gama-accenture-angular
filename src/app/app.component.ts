@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
       setTimeout(() => {
         this.showHeader = false;
       }, 3000);
+
+      setTimeout(() => {
+        this.showHeader = true;
+      }, 5000);
     }, 3000);
   }
 

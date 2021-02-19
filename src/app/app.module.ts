@@ -12,6 +12,10 @@ import { ExercicioContadorComponent } from './shared/components/exercicio-contad
 import { ExercicioDiretivasComponent } from './shared/components/exercicio-diretivas/exercicio-diretivas.component';
 import { ExerccioNgclassComponent } from './shared/components/exerccio-ngclass/exerccio-ngclass.component';
 import { ExercicioPipesComponent } from './shared/components/exercicio-pipes/exercicio-pipes.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from 'src/app-routing.module';
+import { ExtratoComponent } from './extrato/extrato.component';
+import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 
 registerLocaleData(localeBr, "pt");
 @NgModule({
@@ -24,10 +28,14 @@ registerLocaleData(localeBr, "pt");
     ExercicioContadorComponent,
     ExercicioDiretivasComponent,
     ExerccioNgclassComponent,
-    ExercicioPipesComponent
+    ExercicioPipesComponent,
+    LoginComponent,
+    ExtratoComponent,
+    NaoEncontradoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [{
     provide: LOCALE_ID,

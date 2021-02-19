@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   titleHeader = "Oioioi! 😀"
+  showHeader = true;
 
   word = "CARRO";
 
@@ -22,8 +23,18 @@ export class AppComponent {
     }, 5000);
   };
 
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.titleHeader = "Vendo o title mudar no ngOnChanges";
+
+      setTimeout(() => {
+        this.showHeader = false;
+      }, 3000);
+    }, 3000);
+  }
+
   onClicked($event) {
-    console.log("AppComponent: evento recebido!", $event)
+    console.log("AppComponent: evento recebido!", $event);
   };
 
 }

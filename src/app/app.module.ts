@@ -4,14 +4,14 @@ import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { DataBindingExerciseComponent } from './data-binding-exercise/data-binding-exercise.component';
-import { ExercicioContadorComponent } from './exercicio-contador/exercicio-contador.component';
-import { ExercicioDiretivasComponent } from './exercicio-diretivas/exercicio-diretivas.component';
-import { ExerccioNgclassComponent } from './exerccio-ngclass/exerccio-ngclass.component';
-import { ExercicioPipesComponent } from './exercicio-pipes/exercicio-pipes.component';
+import { DataBindingExerciseComponent } from './shared/components/data-binding-exercise/data-binding-exercise.component';
+import { ExercicioContadorComponent } from './shared/components/exercicio-contador/exercicio-contador.component';
+import { ExercicioDiretivasComponent } from './shared/components/exercicio-diretivas/exercicio-diretivas.component';
+import { ExerccioNgclassComponent } from './shared/components/exerccio-ngclass/exerccio-ngclass.component';
+import { ExercicioPipesComponent } from './shared/components/exercicio-pipes/exercicio-pipes.component';
 
 registerLocaleData(localeBr, "pt");
 @NgModule({

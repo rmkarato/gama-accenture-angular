@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Transacao } from "./extrato.interfaces";
@@ -16,6 +17,8 @@ export class ExtratoService {
   ) { }
 
   getTransacoes() {
+    // <----- PARA FORÇAR UM ERRO ---->
+    // return throwError(new Error("Erro genérico."))
     return this.http.get<Transacao[]>(`${this.API_URL}/transacoes`);
   }
 }

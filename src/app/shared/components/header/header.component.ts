@@ -9,23 +9,23 @@ export class HeaderComponent implements OnInit, OnChanges, AfterViewInit, OnDest
   @Input() titleHeader: string;
   
   constructor() { 
-    console.log("Construtor");
+    // console.log("Construtor");
   }
 
   ngOnChanges() {
-    console.log("ngOnChanges");
+    // console.log("ngOnChanges");
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit");
+    // console.log("ngOnInit");
   }
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit");
+    // console.log("ngAfterViewInit");
   }
 
   ngOnDestroy() {
-    console.log("Fui destruído! :(");
+    // console.log("Fui destruído! :(");
   }
 
 }

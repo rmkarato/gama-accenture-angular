@@ -3,7 +3,7 @@ import { ExtratoService } from './extrato.service';
 
 import { Transacao } from "./extrato.interfaces";
 
-import { finalize } from 'rxjs/operators';
+import { take, finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-extrato',
@@ -34,6 +34,7 @@ export class ExtratoComponent implements OnInit {
 
     this.extratoService.getTransacoes(this.pagina)
     .pipe(
+      take(1),
       finalize(() => this.isLoading = false)
     )
       .subscribe(

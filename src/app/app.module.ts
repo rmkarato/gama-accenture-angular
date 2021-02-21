@@ -10,6 +10,7 @@ import { AppRoutingModule } from 'src/app-routing.module';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { SharedModule } from './shared/shared.module';
+import { ContatosComponent } from './contatos/contatos.component';
 
 registerLocaleData(localeBr, "pt");
 @NgModule({
@@ -18,7 +19,8 @@ registerLocaleData(localeBr, "pt");
     HomeComponent,
     LoginComponent,
     ExtratoComponent,
-    NaoEncontradoComponent
+    NaoEncontradoComponent,
+    ContatosComponent
   ],
   imports: [
     BrowserModule,

@@ -46,4 +46,9 @@ export class AuthService {
     }
     return null;
   }
+
+  isLogged(): boolean {
+    return this.getUser() && this.getToken() ? true : false;
+  }
+
 }

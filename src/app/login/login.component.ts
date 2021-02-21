@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import { LoginService } from './login.service';
 
 @Component({
@@ -15,14 +17,20 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
 
+  isLoading: boolean;
+  loginError: boolean;
+
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form) {
+    this.loginError = false;
+
     if (!form.valid) {
     
       form.controls.email.markAsTouched();
@@ -44,15 +52,23 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
     this.loginService.logar(this.email, this.password)
-      .subscribe(
-        response => {
-          console.log("Sucesso! Logou!")
-        },
-        error => {
-          console.log("Deu ruim! Não logou!")
-        }
+      .pipe(
+        finalize(() => this.isLoading = false)
       )
+      .subscribe(
+        _response => this.onLoginSuccess(),
+        _error => this.onErrorLogin()
+      )
+  }
+
+  onLoginSuccess() {
+    this.router.navigate(['home']);
+  }
+
+  onErrorLogin() {
+    this.loginError = true;
   }
 
   exibeErro(nomeControle: string, form: NgForm) {

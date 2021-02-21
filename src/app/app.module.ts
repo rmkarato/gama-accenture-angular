@@ -12,6 +12,7 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
 import { SharedModule } from './shared/shared.module';
 import { ContatosComponent } from './contatos/contatos.component';
 import { DetalhesContatoComponent } from './contatos/detalhes-contato/detalhes-contato.component';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localeBr, "pt");
 @NgModule({
@@ -29,6 +30,7 @@ registerLocaleData(localeBr, "pt");
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [{
     provide: LOCALE_ID,

@@ -20,4 +20,16 @@ export class ContatosService {
   getContato(id: string) {
     return this.http.get<Contatos>(`${this.API_URL}/contatos/${id}`)
   }
+
+  createContact(contato: Contatos) {
+    return this.http.post<Contatos[]>(`${this.API_URL}/contatos`, contato)
+  }
+
+  updateContact(id: string, contato: Contatos) {
+    return this.http.put<Contatos[]>(`${this.API_URL}/contatos/${id}`, contato)
+  }
+
+  deleteContact(id: string) {
+    return this.http.delete<Contatos>(`${this.API_URL}/contatos/${id}`)
+  }
 }

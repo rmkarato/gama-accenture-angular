@@ -5,6 +5,7 @@ import { LoginComponent } from "../src/app/login/login.component";
 import { HomeComponent } from "../src/app/home/home.component";
 import { ExtratoComponent } from './app/extrato/extrato.component';
 import { NaoEncontradoComponent } from './app/nao-encontrado/nao-encontrado.component';
+import { ContatosComponent } from './app/contatos/contatos.component';
 
 const routes: Routes = [{
         path: "login",
@@ -19,10 +20,13 @@ const routes: Routes = [{
         path: "",
         redirectTo: "home",
         pathMatch: "full",
-    },{
+    }, {
+        path: "contatos",
+        component: ContatosComponent,
+    }, {
         path: "**",
         component: NaoEncontradoComponent
-    },
+    }, 
 ];
 
 @NgModule({

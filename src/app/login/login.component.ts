@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +8,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   
+  @ViewChild("emailInput") emailInput: ElementRef;
+  @ViewChild("passwordInput") passwordInput: ElementRef;
+
   email: string;
   password: string;
 
@@ -18,15 +21,25 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form) {
     if (!form.valid) {
+    
       form.controls.email.markAsTouched();
       form.controls.password.markAsTouched();
-      console.log(form.value);
-      console.log("Formulário inválido!")
+
+      if(form.controls.email.invalid) {
+        this.emailInput.nativeElement.focus();
+        return;
+      }
+
+      if(form.controls.password.invalid) {
+        this.passwordInput.nativeElement.focus();
+        return;
+      }
+
       return;
     }
   }
 
-  exibeErro(nomeControle: string, form: FormGroup) {
+  exibeErro(nomeControle: string, form: NgForm) {
     if (!form.controls[nomeControle]) {
       return false;
     }

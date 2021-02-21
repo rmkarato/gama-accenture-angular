@@ -11,12 +11,15 @@
                 [(ngModel)]="email"
                 email
                 required
+                [ngClass]="exibeErro('email', form) ? 'is-invalid' : ''"
+                #emailInput
             >
-            <p 
+            <div 
                 *ngIf="exibeErro('email', form)"
+                class="invalid-feedback"
             >
                 E-mail inválido.
-            </p>
+            </div>
         </div>
 
         <div class="p-2">
@@ -26,14 +29,16 @@
                 placeholder="Senha"
                 name="password" 
                 [(ngModel)]="password"
-
                 required
+                [class.is-invalid]="exibeErro('password', form)"
+                #passwordInput
             >
-            <p
+            <div
                 *ngIf="exibeErro('password', form)"
+                class="invalid-feedback"
             >
                 Senha inválida.
-            </p>
+            </div>
         </div>
 
         <div class="p-2">

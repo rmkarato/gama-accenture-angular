@@ -11,6 +11,7 @@ import { ExtratoComponent } from './extrato/extrato.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { SharedModule } from './shared/shared.module';
 import { ContatosComponent } from './contatos/contatos.component';
+import { DetalhesContatoComponent } from './contatos/detalhes-contato/detalhes-contato.component';
 
 registerLocaleData(localeBr, "pt");
 @NgModule({
@@ -20,7 +21,8 @@ registerLocaleData(localeBr, "pt");
     LoginComponent,
     ExtratoComponent,
     NaoEncontradoComponent,
-    ContatosComponent
+    ContatosComponent,
+    DetalhesContatoComponent
   ],
   imports: [
     BrowserModule,

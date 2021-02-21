@@ -6,6 +6,7 @@ import { HomeComponent } from "../src/app/home/home.component";
 import { ExtratoComponent } from './app/extrato/extrato.component';
 import { NaoEncontradoComponent } from './app/nao-encontrado/nao-encontrado.component';
 import { ContatosComponent } from './app/contatos/contatos.component';
+import { DetalhesContatoComponent } from './app/contatos/detalhes-contato/detalhes-contato.component';
 
 const routes: Routes = [{
         path: "login",
@@ -23,6 +24,9 @@ const routes: Routes = [{
     }, {
         path: "contatos",
         component: ContatosComponent,
+    }, {
+        path: "contatos/:id",
+        component: DetalhesContatoComponent,
     }, {
         path: "**",
         component: NaoEncontradoComponent

@@ -11,10 +11,14 @@
     <table class="table table-hover" *ngIf="!isLoading && !errorNotLoading">
         <tr>
             <th> Nome </th>
+            <th> Ações </th>
         </tr>
 
         <tr *ngFor="let contato of contatos">
             <td> {{ contato.nome }} </td>
+            <td>
+                <button class="btn btn-primary" (click)="goToDetails(contato.id)"> Ver Detalhes </button>
+            </td>
         </tr>
     </table>
 </div>>

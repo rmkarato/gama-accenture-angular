@@ -1,0 +1,15 @@
+<div class="container text-center p-5">
+    <div class="spinner-border text-primary" role="status" *ngIf="isLoading">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div class="div table-hover" *ngIf="!isLoading && !errorNotLoading">
+        <p> NOME: {{ contato.nome }} </p>
+        <p> CPF: {{ contato.cpf }} </p>
+        <p> BANCO: {{ contato.banco }} </p>
+        <p> AGÊNCIA: {{ contato.ag }} </p>
+        <p> CONTA-CORRENTE: {{ contato.cc }} </p>
+    </div>
+
+    <button class="btn btn-primary" (click)="voltar()"> Voltar </button>
+</div>>
